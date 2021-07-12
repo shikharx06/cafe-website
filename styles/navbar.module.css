@@ -1,0 +1,67 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  max-height: 7vh;
+}
+
+.navbar > ul {
+  width: 30%;
+  display: inline-flex;
+  justify-content: space-around;
+  list-style: none;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  justify-self: flex-start;
+}
+
+.navbar > ul > li {
+  display: inline-block;
+  position: relative;
+}
+
+.navbar > ul > li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--text-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.navbar > ul > li:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.brandImage {
+  width: 100%;
+  position: relative;
+  top: -4rem;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.brandImage:before {
+  content: "";
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  left: calc(58% + 125px / 2);
+  height: 1px;
+  background: var(--bg-color);
+  opacity: 0.6;
+}
+.brandImage:after {
+  content: "";
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: calc(58% + 125px / 2);
+  height: 1px;
+  background: var(--bg-color);
+  opacity: 0.6;
+}
